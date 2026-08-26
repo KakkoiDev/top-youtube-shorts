@@ -2,7 +2,7 @@
 
 An unofficial, browser-only explorer for finding popular YouTube Shorts across selected regional markets and publication periods.
 
-## Features
+## Features\n\nThe page opens on a default United States / 7-day feed. Use the Filters menu to change the topic, markets, period, ranking, or result depth.\n
 
 - Searches one or more YouTube regional markets only when the visitor asks.
 - Filters for Shorts and publication periods, including custom dates.
