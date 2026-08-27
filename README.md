@@ -1,32 +1,33 @@
 # Top YouTube Shorts
 
-An unofficial, browser-only explorer for finding popular YouTube Shorts across selected regional markets and publication periods.
+A browser-only, full-screen feed of ten popular YouTube Shorts.
 
-## Features\n\nThe page opens on a default United States / 7-day feed. Use the Filters menu to change the topic, markets, period, ranking, or result depth.\n
+## Interaction
 
-- Searches one or more YouTube regional markets only when the visitor asks.
-- Filters for Shorts and publication periods, including custom dates.
-- Deduplicates videos appearing in multiple regional result sets.
-- Sorts by lifetime views, average views per hour since publication, or date.
-- Stores no server-side data and performs no scheduled collection.
+- Opens immediately on a worldwide approximation of the most-viewed Shorts published in the last seven days.
+- Plays automatically (muted, as required by browser autoplay rules), advances when a Short ends, and loops the ten-video feed.
+- Swipe up/down to move through the feed.
+- Swipe right to save a video locally.
+- Swipe left to hide a video permanently on that device.
+- Move above the first feed video to browse saved videos, newest save first.
+- Skip at least two videos within ten seconds to reveal search.
+- Repeating the same search cycles through: 7 days, 1 month, 6 months, 1 year, all time, then back to 7 days.
+- Search-period cycling is session-only. Saved and hidden videos persist in localStorage.
+- Desktop equivalents: arrow down/up navigate; arrow right saves; arrow left hides. Double-click opens search.
 
 ## Accuracy and data limitations
 
-This application does **not** claim to provide an exhaustive or official leaderboard.
+This is an unofficial discovery feed, not an exhaustive or official global leaderboard.
 
 1. YouTube search returns ranked samples, not every matching Short.
-2. A region represents a YouTube market, not the creator's nationality or video's origin.
-3. Periods describe publication time. Ranking uses current lifetime views, not views gained inside the period.
-4. Average views/hour divides lifetime views by age; it is not recent hourly growth.
-5. Custom dates post-filter returned results and cannot recover omitted videos.
-6. Data comes from YouTube's undocumented InnerTube interface through [YouTube.js](https://github.com/LuanRT/YouTube.js). YouTube changes, experiments, indexing delays, consent screens, location inference, and throttling may affect results.
-7. A blank search uses `#shorts`; it is not a neutral worldwide index.
+2. “Worldwide” merges samples from several large YouTube regional markets, deduplicates them, and ranks the returned videos.
+3. Periods describe publication time; ranking uses current lifetime views, not views gained during that period.
+4. YouTube's search filters do not expose an exact six-month window. The six-month pass is therefore an approximation drawn from the one-year result pool.
+5. A blank search uses `#shorts`; it is not a neutral worldwide index.
+6. YouTube indexing, experiments, location inference, throttling, and consent behavior can change results.
+7. The app uses YouTube's undocumented InnerTube interface via [YouTube.js](https://github.com/LuanRT/YouTube.js), which can break when YouTube changes it.
+8. Videos are embedded from YouTube and are never downloaded or rehosted.
 
-## Development
-
-```bash
-npm install
-npm run dev
-```
+No backend, scheduled collection, account, or server-side database is used.
 
 This project is not affiliated with or endorsed by YouTube or Google.
